@@ -3,11 +3,16 @@
         xmlns:vm="using:UI.ViewModels"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        mc:Ignorable="d" d:DesignWidth="400" d:DesignHeight="550"
+        mc:Ignorable="d" d:DesignWidth="700" d:DesignHeight="550"
         x:Class="UI.Views.MainWindow"
         x:DataType="vm:MainWindowViewModel"
         Icon="/Assets/avalonia-logo.ico"
         Title="UI"
+        Width="800"
+        Height="550"
+        CanResize="False"
+        TransparencyLevelHint="AcrylicBlur"
+        Background="Transparent"
         BackgroundSizing="CenterBorder">
 
     <Design.DataContext>
@@ -18,13 +23,17 @@
     <StackPanel>
         <TabControl Margin="5">
             <TabItem Header="C1">
-                <Grid ShowGridLines="True"
+                <Grid
                       ColumnDefinitions="400,400"
                       RowDefinitions="Auto,Auto,Auto">
-                    <Label Grid.Row="0" Grid.Column="0">Code</Label>
-                    <TextBox TextWrapping="Wrap" Height="400" Width="400" Grid.Row="1" Grid.Column="0" > mucho mucho texto</TextBox>
-                    <Label Grid.Row="0" Grid.Column="1">Errors</Label>
-                    <TextBlock Grid.Row="1" Grid.Column="1"> mucho mucho texto 2</TextBlock>
+                    <Label Grid.Row="0" Grid.Column="0" FontSize="20">Code</Label>
+                    <Button Grid.Row="0" Grid.Column="0" Margin="60,0,0,0" Click="OpenFile">Open File</Button>
+                    <Button Grid.Row="0" Grid.Column="0" Margin="150,0,0,0" Click="OpenLastFile">Open Last File</Button>
+                    <TextBox TextWrapping="Wrap" Height="400" Width="400" Grid.Row="1" Grid.Column="0" Name="CodeTextBox"> </TextBox>
+                    <Label Grid.Row="0" Grid.Column="1" FontSize="20">Errors</Label>
+                    <TextBlock Grid.Row="1" Grid.Column="1" Width="400"></TextBlock>
+                    <Button Grid.Row="2" Grid.Column="0" HorizontalAlignment="Center" Click="print">Compile</Button>
+                    <Button Grid.Row="2" Grid.Column="1" HorizontalAlignment="Center">Go to Error</Button>
                 </Grid>
             </TabItem>
             <TabItem Header="+">
@@ -32,25 +41,4 @@
             </TabItem>
         </TabControl>
     </StackPanel>
-    <!-- <Border Margin="5"  -->
-    <!--         CornerRadius="10" -->
-    <!--         Background="LightBlue"> -->
-    <!--     <TextBlock Margin="5" -->
-    <!--                FontSize="24"  -->
-    <!--                HorizontalAlignment="Center" -->
-    <!--                Text="Temperature Converter"> -->
-    <!--     </TextBlock> -->
-    <!-- </Border> -->
-    <!-- <StackPanel> -->
-    <!-- </StackPanel> -->
-    <!-- <Grid Margin="5" -->
-    <!--       ColumnDefinitions="120,100" -->
-    <!--       RowDefinitions="Auto,Auto,Auto"> -->
-    <!--     <Label Grid.Row="0" Grid.Column="0" Margin="10">Celsius</Label> -->
-    <!--     <TextBox Grid.Row="0" Grid.Column="1" Margin="0 5" Text="0" Name="Celsius"/> -->
-    <!--     <Label Grid.Row="1" Grid.Column="0" Margin="10">Fahrenheit</Label> -->
-    <!--     <TextBox Grid.Row="1"  Grid.Column="1" Margin="0 5" Text="0" Name="Fahrenheit" IsReadOnly="True"/> -->
-    <!--     <Button Grid.Row="2" Grid.Column="1" Margin="0 5" Click="ButtonClicked">Calculate</Button> -->
-    <!-- </Grid> -->
-
 </Window>
