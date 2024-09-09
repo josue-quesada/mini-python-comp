@@ -31,7 +31,6 @@ public partial class MainWindow : Window
         {
             string filePath = result[0];
             string fileContent = File.ReadAllText(filePath);
-        
             CodeTextBox.Text = fileContent;
             SaveLastFilePath(filePath);
         }
@@ -43,26 +42,22 @@ public partial class MainWindow : Window
         {
             { "LastFilePath", filePath }
         };
-
         string jsonString = JsonSerializer.Serialize(config);
-
         string appDirectory = AppDomain.CurrentDomain.BaseDirectory;
-        string saveFilePath = Path.Combine(appDirectory, "src", "lastFile.json");
-
-        Console.WriteLine(appDirectory, saveFilePath);
-        // Write the JSON content to the file
-       // File.WriteAllText(saveFilePath, jsonString);
+        string projectRoot = Directory.GetParent(appDirectory).Parent.Parent.Parent.FullName;
+        string saveFilePath = Path.Combine(projectRoot, "src", "lastFile.json");
+        File.WriteAllText(saveFilePath, jsonString);
     }
 
     public string GetLastOpenedFilePath()
     {
         string appDirectory = AppDomain.CurrentDomain.BaseDirectory;
-        string filePath = Path.Combine(appDirectory, "src", "lastFile.json");
+        string projectRoot = Directory.GetParent(appDirectory).Parent.Parent.Parent.FullName;
+        string filePath = Path.Combine(projectRoot, "src", "lastFile.json");
         if (File.Exists(filePath))
         {
-            string jsonString = File.ReadAllText("src/lastFile.json");
+            string jsonString = File.ReadAllText(filePath);
             var config = JsonSerializer.Deserialize<Dictionary<string, string>>(jsonString);
-
             if (config.ContainsKey("LastFilePath"))
             {
                 return config["LastFilePath"];
@@ -74,10 +69,10 @@ public partial class MainWindow : Window
     public void OpenLastFile(object source, RoutedEventArgs args)
     {
         string lastFilePath = GetLastOpenedFilePath();
-
         if (!string.IsNullOrEmpty(lastFilePath))
         {
-            string fileContent = CodeTextBox.Text;
+            string fileContent = File.ReadAllText(lastFilePath);
+            CodeTextBox.Text = fileContent;
         }
         else
         {
