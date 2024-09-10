@@ -67,3 +67,5 @@ C:\Users\Josue\Documents\GitHub\mini-python-comp\mini-python\UI\obj\Debug\net8.0
 C:\Users\Josue\Documents\GitHub\mini-python-comp\mini-python\UI\obj\Debug\net8.0\UI.csproj.Up2Date
 C:\Users\Josue\Documents\GitHub\mini-python-comp\mini-python\UI\obj\Debug\net8.0\UI.genruntimeconfig.cache
 C:\Users\Josue\Documents\GitHub\mini-python-comp\mini-python\UI\obj\Debug\net8.0\ref\UI.dll
+C:\Users\Josue\Documents\GitHub\mini-python-comp\mini-python\UI\bin\Debug\net8.0\Antlr4.Runtime.Standard.dll
+C:\Users\Josue\Documents\GitHub\mini-python-comp\mini-python\UI\bin\Debug\net8.0\Deque.dll

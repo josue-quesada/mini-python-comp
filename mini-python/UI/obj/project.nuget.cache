@@ -1,9 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "RQg2OGfO+on6C73lZoySwN4W6etrtmlrBD7SRt6Q9Lzjy48XaSVBcT8XtvR91ZXxdDxe/HBBjrA1Qg7/PcoZjA==",
+  "dgSpecHash": "Eq32pURCwb3Z0B836fRWb72taRrM/7Hy2UAM3QgVCCTuahunMp+zugG2/t+ZSCcd0gdxbeqDr71e42eGfepwTA==",
   "success": true,
   "projectFilePath": "C:\\Users\\Josue\\Documents\\GitHub\\mini-python-comp\\mini-python\\UI\\UI.csproj",
   "expectedPackageFiles": [
+    "C:\\Users\\Josue\\.nuget\\packages\\antlr4.runtime.standard\\4.13.1\\antlr4.runtime.standard.4.13.1.nupkg.sha512",
     "C:\\Users\\Josue\\.nuget\\packages\\avalonia\\11.1.0\\avalonia.11.1.0.nupkg.sha512",
     "C:\\Users\\Josue\\.nuget\\packages\\avalonia.angle.windows.natives\\2.1.22045.20230930\\avalonia.angle.windows.natives.2.1.22045.20230930.nupkg.sha512",
     "C:\\Users\\Josue\\.nuget\\packages\\avalonia.buildservices\\0.0.29\\avalonia.buildservices.0.0.29.nupkg.sha512",
@@ -21,6 +22,7 @@
     "C:\\Users\\Josue\\.nuget\\packages\\avalonia.win32\\11.1.0\\avalonia.win32.11.1.0.nupkg.sha512",
     "C:\\Users\\Josue\\.nuget\\packages\\avalonia.x11\\11.1.0\\avalonia.x11.11.1.0.nupkg.sha512",
     "C:\\Users\\Josue\\.nuget\\packages\\communitytoolkit.mvvm\\8.2.1\\communitytoolkit.mvvm.8.2.1.nupkg.sha512",
+    "C:\\Users\\Josue\\.nuget\\packages\\deque\\1.0.1\\deque.1.0.1.nupkg.sha512",
     "C:\\Users\\Josue\\.nuget\\packages\\harfbuzzsharp\\7.3.0.2\\harfbuzzsharp.7.3.0.2.nupkg.sha512",
     "C:\\Users\\Josue\\.nuget\\packages\\harfbuzzsharp.nativeassets.linux\\7.3.0.2\\harfbuzzsharp.nativeassets.linux.7.3.0.2.nupkg.sha512",
     "C:\\Users\\Josue\\.nuget\\packages\\harfbuzzsharp.nativeassets.macos\\7.3.0.2\\harfbuzzsharp.nativeassets.macos.7.3.0.2.nupkg.sha512",
@@ -36,5 +38,16 @@
     "C:\\Users\\Josue\\.nuget\\packages\\system.numerics.vectors\\4.5.0\\system.numerics.vectors.4.5.0.nupkg.sha512",
     "C:\\Users\\Josue\\.nuget\\packages\\tmds.dbus.protocol\\0.16.0\\tmds.dbus.protocol.0.16.0.nupkg.sha512"
   ],
-  "logs": []
+  "logs": [
+    {
+      "code": "NU1701",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "Package 'Deque 1.0.1' was restored using '.NETFramework,Version=v4.6.1, .NETFramework,Version=v4.6.2, .NETFramework,Version=v4.7, .NETFramework,Version=v4.7.1, .NETFramework,Version=v4.7.2, .NETFramework,Version=v4.8, .NETFramework,Version=v4.8.1' instead of the project target framework 'net8.0'. This package may not be fully compatible with your project.",
+      "libraryId": "Deque",
+      "targetGraphs": [
+        "net8.0"
+      ]
+    }
+  ]
 }

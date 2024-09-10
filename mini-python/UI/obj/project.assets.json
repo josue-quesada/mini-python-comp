@@ -2,6 +2,19 @@
   "version": 3,
   "targets": {
     "net8.0": {
+      "Antlr4.Runtime.Standard/4.13.1": {
+        "type": "package",
+        "compile": {
+          "lib/netstandard2.0/Antlr4.Runtime.Standard.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/netstandard2.0/Antlr4.Runtime.Standard.dll": {
+            "related": ".xml"
+          }
+        }
+      },
       "Avalonia/11.1.0": {
         "type": "package",
         "dependencies": {
@@ -354,6 +367,19 @@
           "buildTransitive/netstandard2.1/CommunityToolkit.Mvvm.targets": {}
         }
       },
+      "Deque/1.0.1": {
+        "type": "package",
+        "compile": {
+          "lib/Net20/Deque.dll": {
+            "related": ".XML"
+          }
+        },
+        "runtime": {
+          "lib/Net20/Deque.dll": {
+            "related": ".XML"
+          }
+        }
+      },
       "HarfBuzzSharp/7.3.0.2": {
         "type": "package",
         "dependencies": {
@@ -599,6 +625,21 @@
     }
   },
   "libraries": {
+    "Antlr4.Runtime.Standard/4.13.1": {
+      "sha512": "Da5+i4kFHUseJRZGcBG5fmZGpA/Ns180ibrQMxgZzjpQOnENVvSL5gi5HZ8Ncz8/AR2WsKbOg2lMBzjz0HUQcA==",
+      "type": "package",
+      "path": "antlr4.runtime.standard/4.13.1",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "antlr4.runtime.standard.4.13.1.nupkg.sha512",
+        "antlr4.runtime.standard.nuspec",
+        "lib/net45/Antlr4.Runtime.Standard.dll",
+        "lib/net45/Antlr4.Runtime.Standard.xml",
+        "lib/netstandard2.0/Antlr4.Runtime.Standard.dll",
+        "lib/netstandard2.0/Antlr4.Runtime.Standard.xml"
+      ]
+    },
     "Avalonia/11.1.0": {
       "sha512": "tqD4Az6xnEa5INS0bduGuv0VFIWCxQ/kJT+yBT+KI8TsofJUYMFjc617rBoObEZoTNyIHiV58LBn6sRw/ht65g==",
       "type": "package",
@@ -1065,6 +1106,19 @@
         "lib/netstandard2.1/CommunityToolkit.Mvvm.xml"
       ]
     },
+    "Deque/1.0.1": {
+      "sha512": "YnP8n1kebGka6l19TeQK994QH+9ukwo1kzSpQ/ROyP3cqEszPvCpOFmVOFPolWiwZi3Ir7wX/p2b/Q32QOLiBQ==",
+      "type": "package",
+      "path": "deque/1.0.1",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "deque.1.0.1.nupkg.sha512",
+        "deque.nuspec",
+        "lib/Net20/Deque.XML",
+        "lib/Net20/Deque.dll"
+      ]
+    },
     "HarfBuzzSharp/7.3.0.2": {
       "sha512": "0tCd6HyCmNsX/DniCp2b00fo0xPbdNwKOs9BxxyT8oOOuMlWjcSFwzONKyeckCKVBFEsbSmsAHPDTqxoSDwZMg==",
       "type": "package",
@@ -1511,12 +1565,14 @@
   },
   "projectFileDependencyGroups": {
     "net8.0": [
+      "Antlr4.Runtime.Standard >= 4.13.1",
       "Avalonia >= 11.1.0",
       "Avalonia.Desktop >= 11.1.0",
       "Avalonia.Diagnostics >= 11.1.0",
       "Avalonia.Fonts.Inter >= 11.1.0",
       "Avalonia.Themes.Fluent >= 11.1.0",
-      "CommunityToolkit.Mvvm >= 8.2.1"
+      "CommunityToolkit.Mvvm >= 8.2.1",
+      "Deque >= 1.0.1"
     ]
   },
   "packageFolders": {
@@ -1558,6 +1614,10 @@
       "net8.0": {
         "targetAlias": "net8.0",
         "dependencies": {
+          "Antlr4.Runtime.Standard": {
+            "target": "Package",
+            "version": "[4.13.1, )"
+          },
           "Avalonia": {
             "target": "Package",
             "version": "[11.1.0, )"
@@ -1581,6 +1641,10 @@
           "CommunityToolkit.Mvvm": {
             "target": "Package",
             "version": "[8.2.1, )"
+          },
+          "Deque": {
+            "target": "Package",
+            "version": "[1.0.1, )"
           }
         },
         "imports": [
@@ -1602,5 +1666,17 @@
         "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.400/PortableRuntimeIdentifierGraph.json"
       }
     }
-  }
+  },
+  "logs": [
+    {
+      "code": "NU1701",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "Package 'Deque 1.0.1' was restored using '.NETFramework,Version=v4.6.1, .NETFramework,Version=v4.6.2, .NETFramework,Version=v4.7, .NETFramework,Version=v4.7.1, .NETFramework,Version=v4.7.2, .NETFramework,Version=v4.8, .NETFramework,Version=v4.8.1' instead of the project target framework 'net8.0'. This package may not be fully compatible with your project.",
+      "libraryId": "Deque",
+      "targetGraphs": [
+        "net8.0"
+      ]
+    }
+  ]
 }

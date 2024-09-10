@@ -40,6 +40,10 @@
         "net8.0": {
           "targetAlias": "net8.0",
           "dependencies": {
+            "Antlr4.Runtime.Standard": {
+              "target": "Package",
+              "version": "[4.13.1, )"
+            },
             "Avalonia": {
               "target": "Package",
               "version": "[11.1.0, )"
@@ -63,6 +67,10 @@
             "CommunityToolkit.Mvvm": {
               "target": "Package",
               "version": "[8.2.1, )"
+            },
+            "Deque": {
+              "target": "Package",
+              "version": "[1.0.1, )"
             }
           },
           "imports": [

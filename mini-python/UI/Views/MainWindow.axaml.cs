@@ -2,8 +2,11 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Text.Json;
+using Antlr4.Runtime;
 using Avalonia.Controls;
 using Avalonia.Interactivity;
+using generated;
+using UI.Imports;
 
 namespace UI.Views;
 
@@ -82,7 +85,19 @@ public partial class MainWindow : Window
 
     public void print(object source, RoutedEventArgs args)
     {
-        Console.WriteLine("hola");
+        ErrorTextBlock.Text = "brr";
     }
 
+    public void test(object source, RoutedEventArgs args)
+    {
+        string input = CodeTextBox.Text;
+        ICharStream stream = CharStreams.fromString(input);
+        MPLexer lexer = new MPLexer(stream);
+
+        CommonTokenStream tokens = new CommonTokenStream(lexer);
+        MPParser parser = new MPParser(tokens);
+
+        // Parse the input
+        parser.program();
+    }
 }

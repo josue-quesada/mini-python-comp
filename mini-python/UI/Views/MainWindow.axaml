@@ -29,10 +29,10 @@
                     <Label Grid.Row="0" Grid.Column="0" FontSize="20">Code</Label>
                     <Button Grid.Row="0" Grid.Column="0" Margin="60,0,0,0" Click="OpenFile">Open File</Button>
                     <Button Grid.Row="0" Grid.Column="0" Margin="150,0,0,0" Click="OpenLastFile">Open Last File</Button>
-                    <TextBox TextWrapping="Wrap" Height="400" Width="400" Grid.Row="1" Grid.Column="0" Name="CodeTextBox"> </TextBox>
+                    <TextBox TextWrapping="Wrap" Height="400" Width="400" Grid.Row="1" Grid.Column="0" Name="CodeTextBox" AcceptsTab="True" Margin="0,5,5,5"></TextBox>
                     <Label Grid.Row="0" Grid.Column="1" FontSize="20">Errors</Label>
-                    <TextBlock Grid.Row="1" Grid.Column="1" Width="400"></TextBlock>
-                    <Button Grid.Row="2" Grid.Column="0" HorizontalAlignment="Center" Click="print">Compile</Button>
+                    <TextBlock Grid.Row="1" Grid.Column="1" Width="400" Name="ErrorTextBlock"></TextBlock>
+                    <Button Grid.Row="2" Grid.Column="0" HorizontalAlignment="Center" Click="test">Compile</Button>
                     <Button Grid.Row="2" Grid.Column="1" HorizontalAlignment="Center">Go to Error</Button>
                 </Grid>
             </TabItem>

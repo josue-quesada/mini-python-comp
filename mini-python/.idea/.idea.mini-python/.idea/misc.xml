@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ANTLRGenerationPreferences">
+    <option name="perGrammarGenerationSettings">
+      <list>
+        <PerGrammarGenerationSettings>
+          <option name="fileName" value="$PROJECT_DIR$/UI/src/MPLexer.g4" />
+          <option name="autoGen" value="true" />
+          <option name="outputDir" value="C:\Users\Josue\Documents\GitHub\mini-python-comp\mini-python\UI\src" />
+          <option name="libDir" value="" />
+          <option name="encoding" value="" />
+          <option name="pkg" value="generated" />
+          <option name="language" value="CSharp" />
+          <option name="generateListener" value="false" />
+        </PerGrammarGenerationSettings>
+        <PerGrammarGenerationSettings>
+          <option name="fileName" value="$PROJECT_DIR$/UI/src/MPParser.g4" />
+          <option name="autoGen" value="true" />
+          <option name="outputDir" value="C:\Users\Josue\Documents\GitHub\mini-python-comp\mini-python\UI\src" />
+          <option name="libDir" value="" />
+          <option name="encoding" value="" />
+          <option name="pkg" value="generated" />
+          <option name="language" value="CSharp" />
+          <option name="generateListener" value="false" />
+        </PerGrammarGenerationSettings>
+        <PerGrammarGenerationSettings>
+          <option name="fileName" value="$PROJECT_DIR$/UI/src/Lexer.g4" />
+          <option name="autoGen" value="true" />
+          <option name="outputDir" value="C:\Users\Josue\Documents\GitHub\mini-python-comp\mini-python\UI\src" />
+          <option name="libDir" value="" />
+          <option name="encoding" value="" />
+          <option name="pkg" value="generated" />
+          <option name="language" value="CSharp" />
+          <option name="generateListener" value="false" />
+        </PerGrammarGenerationSettings>
+        <PerGrammarGenerationSettings>
+          <option name="fileName" value="$PROJECT_DIR$/UI/src/Parser.g4" />
+          <option name="autoGen" value="true" />
+          <option name="outputDir" value="C:\Users\Josue\Documents\GitHub\mini-python-comp\mini-python\UI\src" />
+          <option name="libDir" value="" />
+          <option name="encoding" value="" />
+          <option name="pkg" value="generated" />
+          <option name="language" value="CSharp" />
+          <option name="generateListener" value="false" />
+        </PerGrammarGenerationSettings>
+      </list>
+    </option>
+  </component>
+</project>
