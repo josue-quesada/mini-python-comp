@@ -18,9 +18,9 @@ public override IToken NextToken()
             .Indent(MPParser.INDENT)
             .Dedent(MPParser.DEDENT)
             .PullToken(base.NextToken);
-        Console.WriteLine("DenterHelper initialized");
+        //Console.WriteLine("DenterHelper initialized");
     }
-    Console.WriteLine($"Token emitted: {denter.NextToken().Text}, Type: {denter.NextToken().Type}");
+    //Console.WriteLine($"Token emitted: {denter.NextToken().Text}, Type: {denter.NextToken().Type}");
     return denter.NextToken();
 }
 }

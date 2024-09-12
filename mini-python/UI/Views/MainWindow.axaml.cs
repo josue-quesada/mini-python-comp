@@ -84,28 +84,29 @@ public partial class MainWindow : Window
     }
     public void test(object source, RoutedEventArgs args)
     {
-        string input = CodeTextBox.Text;
-        ICharStream stream = CharStreams.fromString(input);
-        MPLexer lexer = new MPLexer(stream);
-        CommonTokenStream tokens = new CommonTokenStream(lexer);
-        MPParser parser = new MPParser(tokens);
+        if (CodeTextBox.Text != null || CodeTextBox.Text == "")
+        {
+            string input = CodeTextBox.Text;
+            ICharStream stream = CharStreams.fromString(input);
+            MPLexer lexer = new MPLexer(stream);
+            CommonTokenStream tokens = new CommonTokenStream(lexer);
+            MPParser parser = new MPParser(tokens);
 
-        ErrorListener errorListener = new ErrorListener();
-        lexer.RemoveErrorListeners();
-        parser.RemoveErrorListeners();
-        lexer.AddErrorListener(errorListener);
-        parser.AddErrorListener(errorListener);
-        Console.WriteLine("antes");
-        parser.program();
-        Console.WriteLine("despues");
-        Console.WriteLine(errorListener.HasErrors());
-        if (errorListener.HasErrors())
-        {
-            ErrorTextBlock.Text = errorListener.ToString();
+            ErrorListener errorListener = new ErrorListener();
+            lexer.RemoveErrorListeners();
+            parser.RemoveErrorListeners();
+            lexer.AddErrorListener(errorListener);
+            parser.AddErrorListener(errorListener);
+            parser.program();
+            if (errorListener.HasErrors())
+            {
+                ErrorTextBlock.Text = errorListener.ToString();
+            }
+            else
+            {
+                ErrorTextBlock.Text = "Compilation complete \nNo errors found!";
+            }
         }
-        else
-        {
-            ErrorTextBlock.Text = "Compilation complete \nNo errors found!";
-        }
+        
     }
 }
