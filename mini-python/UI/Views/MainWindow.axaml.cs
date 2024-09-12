@@ -82,22 +82,30 @@ public partial class MainWindow : Window
             CodeTextBox.Text = "There isn't a last file to open";
         }
     }
-
-    public void print(object source, RoutedEventArgs args)
-    {
-        ErrorTextBlock.Text = "brr";
-    }
-
     public void test(object source, RoutedEventArgs args)
     {
         string input = CodeTextBox.Text;
         ICharStream stream = CharStreams.fromString(input);
         MPLexer lexer = new MPLexer(stream);
-
         CommonTokenStream tokens = new CommonTokenStream(lexer);
         MPParser parser = new MPParser(tokens);
 
-        // Parse the input
+        ErrorListener errorListener = new ErrorListener();
+        lexer.RemoveErrorListeners();
+        parser.RemoveErrorListeners();
+        lexer.AddErrorListener(errorListener);
+        parser.AddErrorListener(errorListener);
+        Console.WriteLine("antes");
         parser.program();
+        Console.WriteLine("despues");
+        Console.WriteLine(errorListener.HasErrors());
+        if (errorListener.HasErrors())
+        {
+            ErrorTextBlock.Text = errorListener.ToString();
+        }
+        else
+        {
+            ErrorTextBlock.Text = "Compilation complete \nNo errors found!";
+        }
     }
 }

@@ -4,20 +4,23 @@ options {
     tokenVocab = MPLexer;
 }
 
-program :  mainStatement* ;
+program :  mainStatement* EOF ;
 
-mainStatement : defStatement | assignStatement ;
-statement : defStatement 
-           | ifStatement 
-           | returnStatement 
-           | printStatement 
-           | whileStatement 
-           | assignStatement 
-           | functionCallStatement ;
+mainStatement: defStatement | assignStatement;
 
-defStatement : DEF ID LP argList RP COLON sequence ;
+statement:
+    defStatement
+  | ifStatement
+  | returnStatement
+  | printStatement
+  | whileStatement
+  | forStatement
+  | assignStatement
+  | functionCallStatement;
 
-argList : (ID  (COMMA ID)*)?;
+defStatement : DEF IDENTIFIER LP argList RP COLON NEWLINE sequence ;
+
+argList : (IDENTIFIER  (COMMA IDENTIFIER)*)?;
 
 ifStatement : IF expression COLON sequence ELSE COLON sequence;
 
@@ -27,21 +30,19 @@ forStatement : FOR expression IN expressionList COLON sequence ;
 
 returnStatement : RETURN expression NEWLINE ;
 
-printStatement : PRINT expression NEWLINE ;
+printStatement : PRINT expression NEWLINE;
 
-assignStatement : ID ASSIGN expression NEWLINE ;
+assignStatement : IDENTIFIER ASSIGN expression NEWLINE ;
 
-functionCallStatement : primitiveExpression LP expressionList RP NEWLINE ;
+functionCallStatement : IDENTIFIER LP expressionList RP NEWLINE? ;
 
-sequence : INDENT moreStatements DEDENT ;
+sequence : INDENT statement+ DEDENT;
 
-moreStatements : statement+ ;
-
-expression : additionExpression ( comparison )? ;
+expression : additionExpression comparison? ;
 
 comparison : ( LT | GT | LE | GE | EQ ) additionExpression ;
 
-additionExpression : multiplicationExpression (( ADD | MINUS ) multiplicationExpression )* ;
+additionExpression : multiplicationExpression (( PLUS | MINUS ) multiplicationExpression )* ;
 
 multiplicationExpression : elementExpression ((MUL | DIV ) elementExpression)* ;
 
@@ -49,13 +50,10 @@ elementExpression : primitiveExpression (LB expression RB)? ;
 
 expressionList : (expression  (COMMA expression )*)? ;
 
-primitiveExpression : (MINUS)? ( INTEGER 
-                               | FLOAT 
-                               | CHAR 
-                               | STRING 
-                               | ID (LP expressionList RP)? 
-                               | LP expression RP 
-                               | listExpression 
-                               | LEN LP expression RP) ;
+primitiveExpression :  LP expression RP 
+                   | LEN LP expression RP  
+                   | listExpression 
+                   | ( PLUS | MINUS)? (INTEGER | FLOAT | CHAR | STRING)
+                   | IDENTIFIER (LP expressionList RP)?;
 
 listExpression : LB expressionList RB ;
