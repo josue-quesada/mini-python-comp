@@ -116,6 +116,12 @@ public partial class MPParser : Parser {
 		{
 		}
 		public override int RuleIndex { get { return RULE_program; } }
+		[System.Diagnostics.DebuggerNonUserCode]
+		public override TResult Accept<TResult>(IParseTreeVisitor<TResult> visitor) {
+			IMPParserVisitor<TResult> typedVisitor = visitor as IMPParserVisitor<TResult>;
+			if (typedVisitor != null) return typedVisitor.VisitProgram(this);
+			else return visitor.VisitChildren(this);
+		}
 	}
 
 	[RuleVersion(0)]
@@ -167,6 +173,12 @@ public partial class MPParser : Parser {
 		{
 		}
 		public override int RuleIndex { get { return RULE_mainStatement; } }
+		[System.Diagnostics.DebuggerNonUserCode]
+		public override TResult Accept<TResult>(IParseTreeVisitor<TResult> visitor) {
+			IMPParserVisitor<TResult> typedVisitor = visitor as IMPParserVisitor<TResult>;
+			if (typedVisitor != null) return typedVisitor.VisitMainStatement(this);
+			else return visitor.VisitChildren(this);
+		}
 	}
 
 	[RuleVersion(0)]
@@ -236,6 +248,12 @@ public partial class MPParser : Parser {
 		{
 		}
 		public override int RuleIndex { get { return RULE_statement; } }
+		[System.Diagnostics.DebuggerNonUserCode]
+		public override TResult Accept<TResult>(IParseTreeVisitor<TResult> visitor) {
+			IMPParserVisitor<TResult> typedVisitor = visitor as IMPParserVisitor<TResult>;
+			if (typedVisitor != null) return typedVisitor.VisitStatement(this);
+			else return visitor.VisitChildren(this);
+		}
 	}
 
 	[RuleVersion(0)]
@@ -333,6 +351,12 @@ public partial class MPParser : Parser {
 		{
 		}
 		public override int RuleIndex { get { return RULE_defStatement; } }
+		[System.Diagnostics.DebuggerNonUserCode]
+		public override TResult Accept<TResult>(IParseTreeVisitor<TResult> visitor) {
+			IMPParserVisitor<TResult> typedVisitor = visitor as IMPParserVisitor<TResult>;
+			if (typedVisitor != null) return typedVisitor.VisitDefStatement(this);
+			else return visitor.VisitChildren(this);
+		}
 	}
 
 	[RuleVersion(0)]
@@ -385,6 +409,12 @@ public partial class MPParser : Parser {
 		{
 		}
 		public override int RuleIndex { get { return RULE_argList; } }
+		[System.Diagnostics.DebuggerNonUserCode]
+		public override TResult Accept<TResult>(IParseTreeVisitor<TResult> visitor) {
+			IMPParserVisitor<TResult> typedVisitor = visitor as IMPParserVisitor<TResult>;
+			if (typedVisitor != null) return typedVisitor.VisitArgList(this);
+			else return visitor.VisitChildren(this);
+		}
 	}
 
 	[RuleVersion(0)]
@@ -455,6 +485,12 @@ public partial class MPParser : Parser {
 		{
 		}
 		public override int RuleIndex { get { return RULE_ifStatement; } }
+		[System.Diagnostics.DebuggerNonUserCode]
+		public override TResult Accept<TResult>(IParseTreeVisitor<TResult> visitor) {
+			IMPParserVisitor<TResult> typedVisitor = visitor as IMPParserVisitor<TResult>;
+			if (typedVisitor != null) return typedVisitor.VisitIfStatement(this);
+			else return visitor.VisitChildren(this);
+		}
 	}
 
 	[RuleVersion(0)]
@@ -505,6 +541,12 @@ public partial class MPParser : Parser {
 		{
 		}
 		public override int RuleIndex { get { return RULE_whileStatement; } }
+		[System.Diagnostics.DebuggerNonUserCode]
+		public override TResult Accept<TResult>(IParseTreeVisitor<TResult> visitor) {
+			IMPParserVisitor<TResult> typedVisitor = visitor as IMPParserVisitor<TResult>;
+			if (typedVisitor != null) return typedVisitor.VisitWhileStatement(this);
+			else return visitor.VisitChildren(this);
+		}
 	}
 
 	[RuleVersion(0)]
@@ -553,6 +595,12 @@ public partial class MPParser : Parser {
 		{
 		}
 		public override int RuleIndex { get { return RULE_forStatement; } }
+		[System.Diagnostics.DebuggerNonUserCode]
+		public override TResult Accept<TResult>(IParseTreeVisitor<TResult> visitor) {
+			IMPParserVisitor<TResult> typedVisitor = visitor as IMPParserVisitor<TResult>;
+			if (typedVisitor != null) return typedVisitor.VisitForStatement(this);
+			else return visitor.VisitChildren(this);
+		}
 	}
 
 	[RuleVersion(0)]
@@ -598,6 +646,12 @@ public partial class MPParser : Parser {
 		{
 		}
 		public override int RuleIndex { get { return RULE_returnStatement; } }
+		[System.Diagnostics.DebuggerNonUserCode]
+		public override TResult Accept<TResult>(IParseTreeVisitor<TResult> visitor) {
+			IMPParserVisitor<TResult> typedVisitor = visitor as IMPParserVisitor<TResult>;
+			if (typedVisitor != null) return typedVisitor.VisitReturnStatement(this);
+			else return visitor.VisitChildren(this);
+		}
 	}
 
 	[RuleVersion(0)]
@@ -637,6 +691,12 @@ public partial class MPParser : Parser {
 		{
 		}
 		public override int RuleIndex { get { return RULE_printStatement; } }
+		[System.Diagnostics.DebuggerNonUserCode]
+		public override TResult Accept<TResult>(IParseTreeVisitor<TResult> visitor) {
+			IMPParserVisitor<TResult> typedVisitor = visitor as IMPParserVisitor<TResult>;
+			if (typedVisitor != null) return typedVisitor.VisitPrintStatement(this);
+			else return visitor.VisitChildren(this);
+		}
 	}
 
 	[RuleVersion(0)]
@@ -677,6 +737,12 @@ public partial class MPParser : Parser {
 		{
 		}
 		public override int RuleIndex { get { return RULE_assignStatement; } }
+		[System.Diagnostics.DebuggerNonUserCode]
+		public override TResult Accept<TResult>(IParseTreeVisitor<TResult> visitor) {
+			IMPParserVisitor<TResult> typedVisitor = visitor as IMPParserVisitor<TResult>;
+			if (typedVisitor != null) return typedVisitor.VisitAssignStatement(this);
+			else return visitor.VisitChildren(this);
+		}
 	}
 
 	[RuleVersion(0)]
@@ -720,6 +786,12 @@ public partial class MPParser : Parser {
 		{
 		}
 		public override int RuleIndex { get { return RULE_functionCallStatement; } }
+		[System.Diagnostics.DebuggerNonUserCode]
+		public override TResult Accept<TResult>(IParseTreeVisitor<TResult> visitor) {
+			IMPParserVisitor<TResult> typedVisitor = visitor as IMPParserVisitor<TResult>;
+			if (typedVisitor != null) return typedVisitor.VisitFunctionCallStatement(this);
+			else return visitor.VisitChildren(this);
+		}
 	}
 
 	[RuleVersion(0)]
@@ -775,6 +847,12 @@ public partial class MPParser : Parser {
 		{
 		}
 		public override int RuleIndex { get { return RULE_sequence; } }
+		[System.Diagnostics.DebuggerNonUserCode]
+		public override TResult Accept<TResult>(IParseTreeVisitor<TResult> visitor) {
+			IMPParserVisitor<TResult> typedVisitor = visitor as IMPParserVisitor<TResult>;
+			if (typedVisitor != null) return typedVisitor.VisitSequence(this);
+			else return visitor.VisitChildren(this);
+		}
 	}
 
 	[RuleVersion(0)]
@@ -828,6 +906,12 @@ public partial class MPParser : Parser {
 		{
 		}
 		public override int RuleIndex { get { return RULE_expression; } }
+		[System.Diagnostics.DebuggerNonUserCode]
+		public override TResult Accept<TResult>(IParseTreeVisitor<TResult> visitor) {
+			IMPParserVisitor<TResult> typedVisitor = visitor as IMPParserVisitor<TResult>;
+			if (typedVisitor != null) return typedVisitor.VisitExpression(this);
+			else return visitor.VisitChildren(this);
+		}
 	}
 
 	[RuleVersion(0)]
@@ -877,6 +961,12 @@ public partial class MPParser : Parser {
 		{
 		}
 		public override int RuleIndex { get { return RULE_comparison; } }
+		[System.Diagnostics.DebuggerNonUserCode]
+		public override TResult Accept<TResult>(IParseTreeVisitor<TResult> visitor) {
+			IMPParserVisitor<TResult> typedVisitor = visitor as IMPParserVisitor<TResult>;
+			if (typedVisitor != null) return typedVisitor.VisitComparison(this);
+			else return visitor.VisitChildren(this);
+		}
 	}
 
 	[RuleVersion(0)]
@@ -931,6 +1021,12 @@ public partial class MPParser : Parser {
 		{
 		}
 		public override int RuleIndex { get { return RULE_additionExpression; } }
+		[System.Diagnostics.DebuggerNonUserCode]
+		public override TResult Accept<TResult>(IParseTreeVisitor<TResult> visitor) {
+			IMPParserVisitor<TResult> typedVisitor = visitor as IMPParserVisitor<TResult>;
+			if (typedVisitor != null) return typedVisitor.VisitAdditionExpression(this);
+			else return visitor.VisitChildren(this);
+		}
 	}
 
 	[RuleVersion(0)]
@@ -999,6 +1095,12 @@ public partial class MPParser : Parser {
 		{
 		}
 		public override int RuleIndex { get { return RULE_multiplicationExpression; } }
+		[System.Diagnostics.DebuggerNonUserCode]
+		public override TResult Accept<TResult>(IParseTreeVisitor<TResult> visitor) {
+			IMPParserVisitor<TResult> typedVisitor = visitor as IMPParserVisitor<TResult>;
+			if (typedVisitor != null) return typedVisitor.VisitMultiplicationExpression(this);
+			else return visitor.VisitChildren(this);
+		}
 	}
 
 	[RuleVersion(0)]
@@ -1061,6 +1163,12 @@ public partial class MPParser : Parser {
 		{
 		}
 		public override int RuleIndex { get { return RULE_elementExpression; } }
+		[System.Diagnostics.DebuggerNonUserCode]
+		public override TResult Accept<TResult>(IParseTreeVisitor<TResult> visitor) {
+			IMPParserVisitor<TResult> typedVisitor = visitor as IMPParserVisitor<TResult>;
+			if (typedVisitor != null) return typedVisitor.VisitElementExpression(this);
+			else return visitor.VisitChildren(this);
+		}
 	}
 
 	[RuleVersion(0)]
@@ -1116,6 +1224,12 @@ public partial class MPParser : Parser {
 		{
 		}
 		public override int RuleIndex { get { return RULE_expressionList; } }
+		[System.Diagnostics.DebuggerNonUserCode]
+		public override TResult Accept<TResult>(IParseTreeVisitor<TResult> visitor) {
+			IMPParserVisitor<TResult> typedVisitor = visitor as IMPParserVisitor<TResult>;
+			if (typedVisitor != null) return typedVisitor.VisitExpressionList(this);
+			else return visitor.VisitChildren(this);
+		}
 	}
 
 	[RuleVersion(0)]
@@ -1166,30 +1280,87 @@ public partial class MPParser : Parser {
 	}
 
 	public partial class PrimitiveExpressionContext : ParserRuleContext {
-		[System.Diagnostics.DebuggerNonUserCode] public ITerminalNode LP() { return GetToken(MPParser.LP, 0); }
-		[System.Diagnostics.DebuggerNonUserCode] public ExpressionContext expression() {
-			return GetRuleContext<ExpressionContext>(0);
+		public PrimitiveExpressionContext(ParserRuleContext parent, int invokingState)
+			: base(parent, invokingState)
+		{
 		}
-		[System.Diagnostics.DebuggerNonUserCode] public ITerminalNode RP() { return GetToken(MPParser.RP, 0); }
-		[System.Diagnostics.DebuggerNonUserCode] public ITerminalNode LEN() { return GetToken(MPParser.LEN, 0); }
-		[System.Diagnostics.DebuggerNonUserCode] public ListExpressionContext listExpression() {
-			return GetRuleContext<ListExpressionContext>(0);
+		public override int RuleIndex { get { return RULE_primitiveExpression; } }
+	 
+		public PrimitiveExpressionContext() { }
+		public virtual void CopyFrom(PrimitiveExpressionContext context) {
+			base.CopyFrom(context);
 		}
+	}
+	public partial class LiteralPEASTContext : PrimitiveExpressionContext {
 		[System.Diagnostics.DebuggerNonUserCode] public ITerminalNode INTEGER() { return GetToken(MPParser.INTEGER, 0); }
 		[System.Diagnostics.DebuggerNonUserCode] public ITerminalNode FLOAT() { return GetToken(MPParser.FLOAT, 0); }
 		[System.Diagnostics.DebuggerNonUserCode] public ITerminalNode CHAR() { return GetToken(MPParser.CHAR, 0); }
 		[System.Diagnostics.DebuggerNonUserCode] public ITerminalNode STRING() { return GetToken(MPParser.STRING, 0); }
 		[System.Diagnostics.DebuggerNonUserCode] public ITerminalNode PLUS() { return GetToken(MPParser.PLUS, 0); }
 		[System.Diagnostics.DebuggerNonUserCode] public ITerminalNode MINUS() { return GetToken(MPParser.MINUS, 0); }
+		public LiteralPEASTContext(PrimitiveExpressionContext context) { CopyFrom(context); }
+		[System.Diagnostics.DebuggerNonUserCode]
+		public override TResult Accept<TResult>(IParseTreeVisitor<TResult> visitor) {
+			IMPParserVisitor<TResult> typedVisitor = visitor as IMPParserVisitor<TResult>;
+			if (typedVisitor != null) return typedVisitor.VisitLiteralPEAST(this);
+			else return visitor.VisitChildren(this);
+		}
+	}
+	public partial class GroupPEASTContext : PrimitiveExpressionContext {
+		[System.Diagnostics.DebuggerNonUserCode] public ITerminalNode LP() { return GetToken(MPParser.LP, 0); }
+		[System.Diagnostics.DebuggerNonUserCode] public ExpressionContext expression() {
+			return GetRuleContext<ExpressionContext>(0);
+		}
+		[System.Diagnostics.DebuggerNonUserCode] public ITerminalNode RP() { return GetToken(MPParser.RP, 0); }
+		public GroupPEASTContext(PrimitiveExpressionContext context) { CopyFrom(context); }
+		[System.Diagnostics.DebuggerNonUserCode]
+		public override TResult Accept<TResult>(IParseTreeVisitor<TResult> visitor) {
+			IMPParserVisitor<TResult> typedVisitor = visitor as IMPParserVisitor<TResult>;
+			if (typedVisitor != null) return typedVisitor.VisitGroupPEAST(this);
+			else return visitor.VisitChildren(this);
+		}
+	}
+	public partial class LenPEASTContext : PrimitiveExpressionContext {
+		[System.Diagnostics.DebuggerNonUserCode] public ITerminalNode LEN() { return GetToken(MPParser.LEN, 0); }
+		[System.Diagnostics.DebuggerNonUserCode] public ITerminalNode LP() { return GetToken(MPParser.LP, 0); }
+		[System.Diagnostics.DebuggerNonUserCode] public ExpressionContext expression() {
+			return GetRuleContext<ExpressionContext>(0);
+		}
+		[System.Diagnostics.DebuggerNonUserCode] public ITerminalNode RP() { return GetToken(MPParser.RP, 0); }
+		public LenPEASTContext(PrimitiveExpressionContext context) { CopyFrom(context); }
+		[System.Diagnostics.DebuggerNonUserCode]
+		public override TResult Accept<TResult>(IParseTreeVisitor<TResult> visitor) {
+			IMPParserVisitor<TResult> typedVisitor = visitor as IMPParserVisitor<TResult>;
+			if (typedVisitor != null) return typedVisitor.VisitLenPEAST(this);
+			else return visitor.VisitChildren(this);
+		}
+	}
+	public partial class IdentifierPEASTContext : PrimitiveExpressionContext {
 		[System.Diagnostics.DebuggerNonUserCode] public ITerminalNode IDENTIFIER() { return GetToken(MPParser.IDENTIFIER, 0); }
+		[System.Diagnostics.DebuggerNonUserCode] public ITerminalNode LP() { return GetToken(MPParser.LP, 0); }
 		[System.Diagnostics.DebuggerNonUserCode] public ExpressionListContext expressionList() {
 			return GetRuleContext<ExpressionListContext>(0);
 		}
-		public PrimitiveExpressionContext(ParserRuleContext parent, int invokingState)
-			: base(parent, invokingState)
-		{
+		[System.Diagnostics.DebuggerNonUserCode] public ITerminalNode RP() { return GetToken(MPParser.RP, 0); }
+		public IdentifierPEASTContext(PrimitiveExpressionContext context) { CopyFrom(context); }
+		[System.Diagnostics.DebuggerNonUserCode]
+		public override TResult Accept<TResult>(IParseTreeVisitor<TResult> visitor) {
+			IMPParserVisitor<TResult> typedVisitor = visitor as IMPParserVisitor<TResult>;
+			if (typedVisitor != null) return typedVisitor.VisitIdentifierPEAST(this);
+			else return visitor.VisitChildren(this);
 		}
-		public override int RuleIndex { get { return RULE_primitiveExpression; } }
+	}
+	public partial class ListPEASTContext : PrimitiveExpressionContext {
+		[System.Diagnostics.DebuggerNonUserCode] public ListExpressionContext listExpression() {
+			return GetRuleContext<ListExpressionContext>(0);
+		}
+		public ListPEASTContext(PrimitiveExpressionContext context) { CopyFrom(context); }
+		[System.Diagnostics.DebuggerNonUserCode]
+		public override TResult Accept<TResult>(IParseTreeVisitor<TResult> visitor) {
+			IMPParserVisitor<TResult> typedVisitor = visitor as IMPParserVisitor<TResult>;
+			if (typedVisitor != null) return typedVisitor.VisitListPEAST(this);
+			else return visitor.VisitChildren(this);
+		}
 	}
 
 	[RuleVersion(0)]
@@ -1202,6 +1373,7 @@ public partial class MPParser : Parser {
 			ErrorHandler.Sync(this);
 			switch (TokenStream.LA(1)) {
 			case LP:
+				_localctx = new GroupPEASTContext(_localctx);
 				EnterOuterAlt(_localctx, 1);
 				{
 				State = 171;
@@ -1213,6 +1385,7 @@ public partial class MPParser : Parser {
 				}
 				break;
 			case LEN:
+				_localctx = new LenPEASTContext(_localctx);
 				EnterOuterAlt(_localctx, 2);
 				{
 				State = 175;
@@ -1226,6 +1399,7 @@ public partial class MPParser : Parser {
 				}
 				break;
 			case LB:
+				_localctx = new ListPEASTContext(_localctx);
 				EnterOuterAlt(_localctx, 3);
 				{
 				State = 180;
@@ -1238,6 +1412,7 @@ public partial class MPParser : Parser {
 			case FLOAT:
 			case CHAR:
 			case STRING:
+				_localctx = new LiteralPEASTContext(_localctx);
 				EnterOuterAlt(_localctx, 4);
 				{
 				State = 182;
@@ -1269,6 +1444,7 @@ public partial class MPParser : Parser {
 				}
 				break;
 			case IDENTIFIER:
+				_localctx = new IdentifierPEASTContext(_localctx);
 				EnterOuterAlt(_localctx, 5);
 				{
 				State = 185;
@@ -1315,6 +1491,12 @@ public partial class MPParser : Parser {
 		{
 		}
 		public override int RuleIndex { get { return RULE_listExpression; } }
+		[System.Diagnostics.DebuggerNonUserCode]
+		public override TResult Accept<TResult>(IParseTreeVisitor<TResult> visitor) {
+			IMPParserVisitor<TResult> typedVisitor = visitor as IMPParserVisitor<TResult>;
+			if (typedVisitor != null) return typedVisitor.VisitListExpression(this);
+			else return visitor.VisitChildren(this);
+		}
 	}
 
 	[RuleVersion(0)]

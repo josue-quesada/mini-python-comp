@@ -3,9 +3,11 @@ using System.Collections.Generic;
 using System.IO;
 using System.Text.Json;
 using Antlr4.Runtime;
+using Antlr4.Runtime.Tree;
 using Avalonia.Controls;
 using Avalonia.Interactivity;
 using generated;
+using UI.checker;
 using UI.Imports;
 
 namespace UI.Views;
@@ -87,25 +89,45 @@ public partial class MainWindow : Window
         if (CodeTextBox.Text != null || CodeTextBox.Text == "")
         {
             string input = CodeTextBox.Text;
+            Console.WriteLine(input);
             ICharStream stream = CharStreams.fromString(input);
             MPLexer lexer = new MPLexer(stream);
             CommonTokenStream tokens = new CommonTokenStream(lexer);
             MPParser parser = new MPParser(tokens);
-
+            
             ErrorListener errorListener = new ErrorListener();
+            ContextAnalyzer contextAnalyzer = new ContextAnalyzer();
+            
             lexer.RemoveErrorListeners();
             parser.RemoveErrorListeners();
             lexer.AddErrorListener(errorListener);
             parser.AddErrorListener(errorListener);
-            parser.program();
-            if (errorListener.HasErrors())
+            IParseTree tree = parser.program();
+            try
             {
-                ErrorTextBlock.Text = errorListener.ToString();
+                if (errorListener.HasErrors())
+                {
+                    ErrorTextBlock.Text = errorListener.ToString();
+                }
+                else
+                {
+                    ErrorTextBlock.Text = "Compilation complete \nNo errors found, starting context analyzer.";
+                    contextAnalyzer.Visit(tree);
+                    if (contextAnalyzer.HasErrors())
+                    {
+                        ErrorTextBlock.Text = "Context analyzer failed.";
+                    }
+                    else
+                    {
+                        ErrorTextBlock.Text = "Context analyzer completed successfully.";
+                    }
+                }
             }
-            else
+            catch (NullReferenceException  ex)
             {
-                ErrorTextBlock.Text = "Compilation complete \nNo errors found!";
+                Console.WriteLine("Error!");
             }
+            
         }
         
     }
